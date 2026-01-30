@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-red: #E31E24;
+  --color-brand-black: #000000;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Form input styling - consistent across app */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+  @apply bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black;
+  @apply placeholder:text-gray-400;
+  @apply focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none;
+  @apply hover:border-gray-300 transition-colors duration-200;
+}
+
+textarea {
+  @apply min-h-[120px] resize-y;
+}
+
+/* Date input - improve calendar picker appearance */
+input[type="date"] {
+  accent-color: #E31E24;
+  color-scheme: light;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
