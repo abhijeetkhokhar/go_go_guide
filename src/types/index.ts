@@ -7,11 +7,25 @@ export interface Product {
   priceUnit: string;
 }
 
+export interface PricingPlan {
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  billingCycle: string;
+  features: string[];
+  popular: boolean;
+  cta: string;
+  ctaHref: string;
+}
+
 export interface BookingForm {
   name: string;
   email: string;
   startDate: string;
-  endDate: string;
-  quantity: number;
+  returnDate: string;
+  transmitters: number;
+  microphones: number;
+  receivers: number;
   location: string;
 }

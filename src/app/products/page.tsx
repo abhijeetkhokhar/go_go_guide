@@ -1,6 +1,7 @@
 import { radioProducts } from "@/lib/products";
 import Image from "next/image";
 import Link from "next/link";
+import { Check } from "lucide-react";
 
 export default function ProductsPage() {
   return (
@@ -15,7 +16,8 @@ export default function ProductsPage() {
             Our <span className="text-brand-red">Products</span>
           </h1>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Professional audio systems designed for guided experiences and group communication.
+            Professional audio systems designed for guided experiences and group
+            communication.
           </p>
         </div>
 
@@ -50,33 +52,25 @@ export default function ProductsPage() {
                   {product.description}
                 </p>
 
-                {/* Features - pill style */}
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {product.features.map((feature, fIndex) => (
-                    <span
-                      key={fIndex}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-50 text-brand-red"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+                {/* Features - line-wise format */}
+                <div className="mt-6">
+                  <ul className="space-y-3">
+                    {product.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start">
+                        <Check className="h-4 w-4 text-brand-red mr-3 mt-0.5 shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* Pricing & CTA */}
-                <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <div className="text-2xl font-bold text-brand-black">
-                      {product.price}
-                    </div>
-                    <div className="text-xs text-gray-500 mt-0.5">
-                      {product.priceUnit}
-                    </div>
-                  </div>
+                {/* CTA */}
+                <div className="mt-8 pt-6 border-t border-gray-100">
                   <Link
-                    href="/booking"
-                    className="inline-flex items-center justify-center bg-brand-red text-white font-semibold py-3 px-6 rounded-lg hover:bg-brand-black transition-all duration-200 shadow-sm"
+                    href="/pricing"
+                    className="inline-flex items-center justify-center bg-brand-red text-white font-semibold py-3 px-6 rounded-lg hover:bg-brand-black transition-all duration-200 shadow-sm w-full"
                   >
-                    Book Now
+                    View Pricing
                   </Link>
                 </div>
               </div>

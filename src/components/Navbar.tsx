@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -11,6 +12,7 @@ export default function Navbar() {
   const links = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
+    { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -19,16 +21,19 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full bg-white border-b border-gray-200/80 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo - Text-based for clean SaaS look */}
+          {/* Logo - Image-based */}
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
           >
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-brand-red">Go Go</span>
-              <span className="text-brand-black"> Guide</span>
-            </span>
+            <Image
+              src="/goguide_logo_1.png"
+              alt="Go Go Guide"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}

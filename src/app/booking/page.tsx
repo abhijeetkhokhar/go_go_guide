@@ -122,19 +122,55 @@ export default function BookingsPage() {
                 />
               </div>
 
-              {/* Number of Units */}
+              {/* Equipment Details */}
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-brand-black mb-2">
-                  Number of Units
-                </label>
-                <input
-                  name="quantity"
-                  type="number"
-                  min="1"
-                  required
-                  placeholder="1"
-                  className="w-full"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {/* Number of Transmitters */}
+                  <div>
+                    <label className="block text-sm font-medium text-brand-black mb-2">
+                      Number of Transmitters
+                    </label>
+                    <input
+                      name="transmitters"
+                      type="number"
+                      min="0"
+                      required
+                      placeholder="0"
+                      className="w-full"
+                    />
+                  </div>
+
+                  {/* Number of Receivers */}
+                  <div>
+                    <label className="block text-sm font-medium text-brand-black mb-2">
+                      Number of Receivers
+                    </label>
+                    <input
+                      name="receivers"
+                      type="number"
+                      min="0"
+                      required
+                      placeholder="0"
+                      className="w-full"
+                    />
+                  </div>
+                  
+                  {/* Number of Microphones */}
+                  <div>
+                    <label className="block text-sm font-medium text-brand-black mb-2">
+                      Number of Earphones
+                    </label>
+                    <input
+                      name="microphones"
+                      type="number"
+                      min="0"
+                      required
+                      placeholder="0"
+                      className="w-full"
+                    />
+                  </div>
+
+                </div>
               </div>
 
               {/* Location */}

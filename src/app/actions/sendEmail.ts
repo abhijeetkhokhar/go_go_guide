@@ -6,7 +6,11 @@ export async function sendEmail(formData: FormData) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message"); // For Contact form
-  const quantity = formData.get("quantity"); // For Booking form
+
+  // Equipment fields for Booking form
+  const transmitters = formData.get("transmitters");
+  const microphones = formData.get("microphones");
+  const receivers = formData.get("receivers");
   const startDate = formData.get("startDate"); // For Booking form
   const returnDate = formData.get("returnDate"); // For Booking form
   const location = formData.get("location"); // For Booking form
@@ -19,7 +23,13 @@ export async function sendEmail(formData: FormData) {
     },
   });
 
-  const isBooking = quantity && startDate && returnDate && location;
+  const isBooking =
+    transmitters &&
+    microphones &&
+    receivers &&
+    startDate &&
+    returnDate &&
+    location;
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -34,8 +44,10 @@ Name: ${name}
 Email: ${email}
 Phone: ${formData.get("phone") || "Not provided"}
 
-📦 Rental Details:
-• Quantity: ${quantity} devices
+📦 Equipment Details:
+• Transmitters: ${transmitters}
+• Microphones: ${microphones}
+• Receivers: ${receivers}
 • Start Date: ${startDate}
 • Return Date: ${returnDate}
 • Location: ${location}
