@@ -12,13 +12,13 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className={`w-full rounded-lg py-3.5 text-base font-semibold text-white shadow-sm transition-all duration-200 flex justify-center items-center ${
+      className={`font-heading w-full rounded-xl py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 flex justify-center items-center ${
         pending
           ? "bg-gray-400 cursor-not-allowed"
-          : "bg-brand-red hover:bg-brand-black"
+          : "bg-brand-red hover:bg-brand-black hover:shadow-xl hover:scale-[1.01] shadow-brand-red/25"
       }`}
     >
-      {pending ? "Sending…" : "Send Message"}
+      {pending ? "Sending…" : "Send message"}
     </button>
   );
 }
@@ -111,146 +111,171 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero background - match About/Home */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-red-50/20 pointer-events-none" />
-        <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
+    <main className="min-h-screen bg-white antialiased">
+      {/* Hero */}
+      <section className="relative overflow-hidden" aria-label="Contact us">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-red-50/40 pointer-events-none" />
+        <div className="absolute top-20 right-0 w-[450px] h-[450px] rounded-full bg-brand-red/8 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-brand-red/6 blur-3xl pointer-events-none" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pb-16">
-          <div className="text-center">
-            <p className="text-sm font-semibold text-brand-red uppercase tracking-wider mb-3">
-              Get in Touch
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight mb-4">
-              Let&apos;s Start a{" "}
-              <span className="text-brand-red">Conversation</span>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-12 lg:pb-16">
+          <header className="text-center max-w-3xl mx-auto">
+            <div className="mb-5">
+              <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
+              <p className="text-sm font-semibold text-brand-red uppercase tracking-widest font-heading">
+                Get in touch
+              </p>
+            </div>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight leading-[1.08] mb-5">
+              Let&apos;s start a{" "}
+              <span className="text-brand-red">conversation</span>
             </h1>
-            <p className="text-gray-600 max-w-xl mx-auto text-lg">
-              Whether you&apos;re planning a tour, managing a large group, or
-              need custom rental solutions — we&apos;re here to help.
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
+              Planning a tour, managing a large group, or need a custom quote? We&apos;re here to help.
             </p>
-          </div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200/80 px-4 py-2 text-sm font-medium text-gray-700">
+              <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+              We reply within 24 hours
+            </div>
+          </header>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="relative pb-24">
-        <div className="absolute inset-0 bg-gray-50/80 pointer-events-none" />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-8 lg:-mt-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {/* LEFT: Contact Info - light cards like About page */}
+      <section className="relative pb-24" aria-label="Contact form and details">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/90 to-gray-50 pointer-events-none" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-2 lg:-mt-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* LEFT: Contact details + reply */}
             <div className="space-y-6">
-              {contactItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="group bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-brand-red/20 transition-all duration-300 flex gap-5"
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
-                    {item.icon}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold text-brand-red uppercase tracking-wider mb-2">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-brand-black font-medium hover:text-brand-red transition-colors break-all"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-gray-600 leading-relaxed">
-                        {item.value}
+              <div>
+                <h2 className="font-heading text-sm font-semibold text-brand-red uppercase tracking-widest mb-4">
+                  Contact details
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {contactItems.map((item) => (
+                    <article
+                      key={item.label}
+                      className="group bg-white rounded-2xl border-2 border-gray-200/80 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-red/25 transition-all duration-300 flex flex-col sm:block text-center sm:text-left"
+                    >
+                      <div className="flex justify-center sm:justify-start mb-3">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red ring-1 ring-brand-red/20 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                          {item.icon}
+                        </span>
+                      </div>
+                      <p className="text-xs font-semibold text-brand-red uppercase tracking-wider mb-1.5 font-heading">
+                        {item.label}
                       </p>
-                    )}
-                  </div>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-brand-black font-semibold text-sm sm:text-base hover:text-brand-red transition-colors break-all"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-700 font-medium text-sm sm:text-base leading-snug">
+                          {item.value}
+                        </p>
+                      )}
+                    </article>
+                  ))}
                 </div>
-              ))}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
-                <p className="text-sm text-gray-600 flex items-center gap-2">
-                  <span className="inline-flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                  Our team usually replies within 24 hours.
+              </div>
+              <div className="rounded-2xl border-2 border-green-200/80 bg-green-50/50 px-5 py-4 flex items-center gap-3">
+                <span className="inline-flex h-3 w-3 rounded-full bg-green-500 animate-pulse shrink-0" />
+                <p className="text-gray-700 font-medium text-sm">
+                  We usually reply within <strong className="text-brand-black">24 hours</strong>.
                 </p>
               </div>
             </div>
 
             {/* RIGHT: Contact Form */}
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-xl hover:border-brand-red/20 transition-all duration-300">
-              <div className="h-1.5 w-full bg-linear-to-r from-brand-red to-brand-red/70" />
-              <div className="p-8 sm:p-10">
-                <h3 className="text-xl font-bold text-brand-black mb-6">
-                  Send us a message
-                </h3>
+            <div className="lg:pt-0">
+              <div className="bg-white rounded-2xl border-2 border-gray-200/90 shadow-xl overflow-hidden hover:shadow-2xl hover:border-brand-red/25 transition-all duration-300">
+                <div className="h-1.5 w-full bg-gradient-to-r from-brand-red via-brand-red to-brand-red/80" />
+                <div className="p-8 sm:p-10">
+                  <div className="mb-8">
+                    <span className="inline-block h-0.5 w-10 bg-brand-red rounded-full mb-3" />
+                    <h2 className="font-heading text-2xl sm:text-3xl font-bold text-brand-black mb-2">
+                      Send us a message
+                    </h2>
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      Tell us about your event or rental needs — we&apos;ll get back to you quickly.
+                    </p>
+                  </div>
 
-                <form
-                  key={formKey}
-                  ref={formRef}
-                  action={handleAction}
-                  noValidate
-                  className="space-y-5"
-                >
+                  <form
+                    key={formKey}
+                    ref={formRef}
+                    action={handleAction}
+                    noValidate
+                    className="space-y-6"
+                    aria-label="Contact form"
+                  >
                   <div>
-                    <label className="block text-sm font-medium text-brand-black mb-2">
-                      Full Name <span className="text-brand-red">*</span>
+                    <label htmlFor="contact-name" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
+                      Full name <span className="text-brand-red">*</span>
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       placeholder="John Doe"
                       required
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-left text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-brand-black mb-2">
-                      Email Address <span className="text-brand-red">*</span>
+                    <label htmlFor="contact-email" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
+                      Email address <span className="text-brand-red">*</span>
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       placeholder="john@example.com"
                       required
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-left text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-brand-black mb-2">
-                      Phone Number <span className="text-brand-red">*</span>
+                    <label htmlFor="contact-phone" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
+                      Phone number <span className="text-brand-red">*</span>
                     </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       required
                       placeholder="+1 (555) 000-0000"
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-left text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-brand-black mb-2">
+                    <label htmlFor="contact-message" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
                       Message <span className="text-brand-red">*</span>
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       rows={5}
-                      placeholder="Tell us about your requirements"
+                      placeholder="Tell us about your tour, event, or rental needs…"
                       required
-                      className="w-full min-h-[120px] resize-y bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-left text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      className="w-full min-h-[120px] resize-y bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
                     />
                   </div>
 
                   <SubmitButton />
 
                   <p className="text-center text-xs text-gray-500">
-                    By submitting, you agree to be contacted regarding your
-                    inquiry.
+                    By submitting, you agree to be contacted about your inquiry.
                   </p>
                 </form>
+                </div>
               </div>
             </div>
           </div>

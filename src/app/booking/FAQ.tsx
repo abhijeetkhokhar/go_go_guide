@@ -37,16 +37,17 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="mt-20">
+    <section id="faq" className="mt-20 lg:mt-24" aria-labelledby="booking-faq-heading">
       <div className="text-center mb-12">
-        <p className="text-sm font-semibold text-brand-red uppercase tracking-wider mb-3">
+        <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
+        <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
           FAQ
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-4">
-          Your Questions Answered
+        <h2 id="booking-faq-heading" className="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4 tracking-tight">
+          Your questions answered
         </h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
-          Find quick answers to common queries about our services and policies.
+        <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+          Quick answers about reservations, delivery, and our rental policies.
         </p>
       </div>
 
@@ -58,14 +59,14 @@ export default function FAQ() {
               key={index}
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className={`
-                cursor-pointer rounded-xl border transition-all duration-200 overflow-hidden
+                cursor-pointer rounded-2xl border-2 transition-all duration-200 overflow-hidden
                 ${isOpen
-                  ? "bg-white border-brand-red/30 shadow-md"
-                  : "bg-white border-gray-200 hover:border-gray-300 hover:shadow-sm"
+                  ? "bg-white border-brand-red/40 shadow-md shadow-brand-red/5"
+                  : "bg-white border-gray-200/80 hover:border-brand-red/25 hover:shadow-md"
                 }
               `}
             >
-              <div className="flex items-start justify-between gap-4 px-6 py-5">
+              <div className="flex items-start justify-between gap-4 px-6 sm:px-7 py-5 sm:py-6">
                 <div className="flex items-start gap-4 min-w-0 flex-1">
                   <span
                     className={`
@@ -75,7 +76,7 @@ export default function FAQ() {
                   >
                     {index + 1}
                   </span>
-                  <h3 className="text-base font-semibold text-brand-black pt-0.5">
+                  <h3 className="font-heading text-base font-semibold text-brand-black pt-0.5">
                     {item.q}
                   </h3>
                 </div>
@@ -96,8 +97,8 @@ export default function FAQ() {
                 }`}
               >
                 <div className="overflow-hidden min-h-0">
-                  <div className="px-6 pb-5 pt-0">
-                    <div className="pl-12 border-t border-gray-100 pt-5">
+                  <div className="px-6 sm:px-7 pb-6 pt-0">
+                    <div className="pl-12 sm:pl-14 border-t border-gray-100 pt-5">
                       <p className="text-gray-600 text-sm leading-relaxed">
                         {item.a}
                       </p>

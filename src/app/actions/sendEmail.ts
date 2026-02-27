@@ -15,11 +15,22 @@ export async function sendEmail(formData: FormData) {
   const returnDate = formData.get("returnDate"); // For Booking form
   const location = formData.get("location"); // For Booking form
 
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_PASS;
+  const receiverEmail = process.env.RECEIVER_EMAIL;
+
+  if (!emailUser || !emailPass || !receiverEmail) {
+    console.error(
+      "Email not configured: set EMAIL_USER, EMAIL_PASS, and RECEIVER_EMAIL in .env.local (see .env.example)"
+    );
+    return { success: false };
+  }
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: emailUser,
+      pass: emailPass,
     },
   });
 
@@ -32,8 +43,8 @@ export async function sendEmail(formData: FormData) {
     location;
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.RECEIVER_EMAIL,
+    from: emailUser,
+    to: receiverEmail,
     subject: isBooking
       ? `📅 New Booking Request from ${name} (Go Go Guide)`
       : `💬 New Contact Message from ${name} (Go Go Guide)`,

@@ -18,9 +18,9 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white border-b border-gray-200/80 shadow-sm">
+    <header className="font-heading fixed top-0 z-50 w-full bg-white border-b border-gray-200/80 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           {/* Logo - Image-based */}
           <Link
             href="/"
@@ -28,11 +28,11 @@ export default function Navbar() {
             className="flex items-center group"
           >
             <Image
-              src="/goguide_logo_1.png"
+              src="/goguide.png"
               alt="Go Go Guide"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={340}
+              height={120}
+              className="h-24 sm:h-28 w-auto object-contain"
             />
           </Link>
 

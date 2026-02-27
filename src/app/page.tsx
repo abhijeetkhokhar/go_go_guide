@@ -1,67 +1,88 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Radio Guide Rentals | Wireless Tour Audio for Museums & Events",
+  description:
+    "Rent professional radio guide systems for city tours, museums, and events. Crystal-clear wireless tour audio since 1996. Book online — we deliver. Trusted worldwide.",
+  keywords: [
+    "radio guide rental",
+    "tour guide system",
+    "museum audio equipment",
+    "wireless tour guide",
+    "event audio rental",
+    "group tour headsets",
+  ],
+  openGraph: {
+    title: "Radio Guide Rentals | Wireless Tour Audio | Go Go Guide",
+    description:
+      "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio since 1996.",
+  },
+};
 
 export default function HomePage() {
   return (
     <main className="bg-white text-brand-black antialiased">
-      {/* ================= HERO - SaaS Level ================= */}
-      <section className="relative overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-linear-to-br from-gray-50 via-white to-red-50/30 pointer-events-none" />
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-brand-red/5 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-[400px] h-[400px] rounded-full bg-brand-red/5 blur-3xl -translate-x-1/2 pointer-events-none" />
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden" aria-label="Hero">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-red-50/40 pointer-events-none" />
+        <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-brand-red/8 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 w-[400px] h-[400px] rounded-full bg-brand-red/6 blur-3xl -translate-x-1/2 pointer-events-none" />
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-36 lg:pb-24">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-24">
-            {/* Text Side */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <p className="text-sm font-semibold text-brand-red uppercase tracking-wider mb-4">
-                Professional Radio Rentals
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-black tracking-tight leading-[1.1]">
-                Seamless audio for
-                <span className="text-brand-red"> every tour</span>
+            <header className="w-full lg:w-1/2 text-center lg:text-left">
+              <div className="flex flex-col items-center lg:items-start mb-2">
+                <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
+                <p className="text-sm font-semibold text-brand-red uppercase tracking-widest font-heading">
+                  Wireless Tour Audio Since 1996
+                </p>
+              </div>
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-black tracking-tight leading-[1.1]">
+                Everyone hears you.
+                <span className="text-brand-red"> Every time.</span>
               </h1>
-
-              <p className="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Crystal-clear radio guides for museums, city tours, and events.
-                Book online, we deliver — simple as that.
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Rent professional radio guide systems for museums, city tours, and events. Book online in minutes — we deliver to your venue. No hidden fees.
               </p>
-
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   href="/booking"
-                  className="inline-flex items-center justify-center bg-brand-red text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-brand-black transition-all duration-200 shadow-lg shadow-brand-red/20 hover:shadow-xl"
+                  className="font-heading inline-flex items-center justify-center bg-brand-red text-white font-semibold py-4 px-8 rounded-xl hover:bg-brand-black transition-all duration-200 shadow-lg shadow-brand-red/25 hover:shadow-xl hover:scale-[1.02] ring-2 ring-brand-red/20 hover:ring-brand-red/40"
                 >
-                  Book Now
+                  Reserve your equipment
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center justify-center bg-white text-gray-700 font-semibold py-3.5 px-8 rounded-lg border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200"
+                  className="font-heading inline-flex items-center justify-center bg-white text-brand-black font-semibold py-4 px-8 rounded-xl border-2 border-gray-200 hover:border-brand-red/40 hover:bg-red-50/50 hover:shadow-md transition-all duration-200"
                 >
-                  View Products
+                  See products & pricing
                 </Link>
               </div>
-            </div>
+            </header>
 
-            {/* Image Side - Full-bleed product showcase */}
             <div className="w-full lg:w-1/2 flex justify-center">
               <div className="relative w-full max-w-lg">
-                {/* Decorative glow */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand-red/10 to-brand-red/5 rounded-3xl blur-2xl" />
-                {/* Image card - no empty space */}
-                <div className="relative overflow-hidden rounded-2xl border border-gray-200/80 shadow-2xl shadow-gray-200/50 aspect-[4/3] sm:aspect-[5/4]">
-                  <Image
-                    src="/RadioImg.jpeg"
-                    alt="Go Go Guide radio equipment"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* Subtle gradient overlay at top for polish */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none" />
+                {/* Soft glow behind card */}
+                <div className="absolute -inset-6 bg-gradient-to-br from-brand-red/12 via-brand-red/5 to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
+                {/* Image card with frame */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200/90 shadow-2xl shadow-gray-400/30 ring-1 ring-black/5 bg-white">
+                  {/* Red accent bar */}
+                  <div className="h-2 w-full bg-gradient-to-r from-brand-red via-brand-red to-brand-red/90" />
+                  {/* Image area - full product visible, no harsh crop */}
+                  <div className="relative aspect-[4/3] sm:aspect-[5/4] bg-gradient-to-b from-gray-50 to-white">
+                    <Image
+                      src="/RadioImg.jpeg"
+                      alt="Professional wireless radio guide equipment for tours and events - Go Go Guide"
+                      fill
+                      className="object-contain p-6 sm:p-8 drop-shadow-md"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  {/* Subtle bottom gradient for depth */}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -70,62 +91,64 @@ export default function HomePage() {
       </section>
 
       {/* ================= HOW IT WORKS ================= */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="how-it-works-heading">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-brand-red uppercase tracking-wider mb-3">
+          <div className="text-center mb-16 lg:mb-20">
+            <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
+            <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
               How it works
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-black">
-              Rentals in 3 Easy Steps
+            <h2 id="how-it-works-heading" className="font-heading text-4xl md:text-5xl font-bold text-brand-black tracking-tight">
+              Book in 3 steps — we handle the rest
             </h2>
-            <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-              Simple, transparent, and hassle-free — from browse to delivery.
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              No hidden fees. No complicated contracts. Reserve online, we deliver to your venue.
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-4 lg:gap-6">
+          <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-4 lg:gap-8">
             {[
               {
                 n: "01",
-                t: "Browse & Select",
-                d: "Discover our range of radio guides and make your personalized reservation online.",
+                t: "Choose your equipment",
+                d: "Pick the radio guide system that fits your group size and venue. See products and pricing in minutes.",
               },
               {
                 n: "02",
-                t: "Customize & Confirm",
-                d: "Specify units, dates, and details. Receive an email confirmation instantly.",
+                t: "Confirm dates & details",
+                d: "Tell us when and where. We send confirmation and answer any questions before your event.",
               },
               {
                 n: "03",
-                t: "Delivery & Pickup",
-                d: "We deliver to your location, answer queries, and collect afterwards.",
+                t: "We deliver — you shine",
+                d: "Equipment arrives at your location. After the event, we collect. You focus on your guests.",
               },
             ].map((step, idx) => (
               <div key={idx} className="flex flex-1 items-center gap-4">
-                <div className="flex-1 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-red text-white font-bold text-sm mb-6">
+                <article className="flex-1 bg-white rounded-2xl border-2 border-gray-200/80 p-8 lg:p-9 shadow-md hover:shadow-xl hover:border-brand-red/30 hover:shadow-brand-red/5 transition-all duration-300 h-full flex flex-col overflow-hidden">
+                  <div className="h-0.5 w-full bg-brand-red/20 rounded-full -mx-2 mb-6" />
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-brand-red text-white font-heading font-bold text-base mb-6 shadow-lg shadow-brand-red/20">
                     {step.n}
                   </div>
-                  <h3 className="text-xl font-bold text-brand-black mb-4">
+                  <h3 className="font-heading text-xl font-bold text-brand-black mb-4">
                     {step.t}
                   </h3>
                   <p className="text-gray-600 text-base leading-relaxed flex-grow">
                     {step.d}
                   </p>
-                </div>
+                </article>
                 {idx < 2 && (
                   <div className="hidden md:flex items-center justify-center shrink-0 w-8">
                     <svg
-                      className="w-5 h-5 text-gray-300"
+                      className="w-6 h-6 text-brand-red/40"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      strokeWidth={2}
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
@@ -138,26 +161,28 @@ export default function HomePage() {
       </section>
 
       {/* ================= WHY CHOOSE ================= */}
-      <section className="py-20 bg-white">
+      <section className="py-20 lg:py-24 bg-white" aria-labelledby="why-choose-heading">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-brand-red uppercase tracking-wider mb-3">
-              What We Offer
+          <div className="text-center mb-16 lg:mb-20">
+            <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
+            <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
+              Why choose us
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-4">
-              Why Choose <span className="text-brand-red">Go Go</span> Guide?
+            <h2 id="why-choose-heading" className="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight">
+              Why Choose <span className="text-brand-red">Go</span>{" "}
+              <span className="text-black">Go</span>{" "}
+              <span className="text-brand-red">Guide</span>?
             </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Everything you need for seamless audio communication at your
-              events.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Professional radio guide rentals trusted by museums, tour operators, and event organizers worldwide.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" role="list">
             {[
               {
-                t: "Premium Equipment",
-                d: "Top-quality radio guide systems with crystal-clear audio for any environment.",
+                t: "Premium equipment",
+                d: "Crystal-clear wireless tour guide systems built for museums, city tours, and large events. No dropouts, no fuss.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -175,8 +200,8 @@ export default function HomePage() {
                 ),
               },
               {
-                t: "International Service",
-                d: "We deliver and support events worldwide, wherever your business takes you.",
+                t: "Worldwide delivery",
+                d: "We deliver and support events across 50+ countries. Same reliable equipment and support wherever you are.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -194,8 +219,8 @@ export default function HomePage() {
                 ),
               },
               {
-                t: "Easy Rental Process",
-                d: "Simple booking, fast delivery, and hassle-free returns. Focus on your event.",
+                t: "Simple booking",
+                d: "Reserve online in minutes. We deliver to your venue and collect after. No long-term contracts or hidden fees.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -213,8 +238,8 @@ export default function HomePage() {
                 ),
               },
               {
-                t: "Reliable Support",
-                d: "24/7 technical support ensures your event runs smoothly without interruptions.",
+                t: "Support when you need it",
+                d: "24/7 technical support so your event runs smoothly. We're here before, during, and after your rental.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -232,40 +257,42 @@ export default function HomePage() {
                 ),
               },
             ].map((item, idx) => (
-              <div
+              <article
                 key={idx}
-                className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-xl hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col"
+                className="group bg-white rounded-2xl border-2 border-gray-200/80 p-8 lg:p-9 shadow-md hover:shadow-xl hover:border-brand-red/30 hover:shadow-brand-red/5 transition-all duration-300 h-full flex flex-col"
+                role="listitem"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6 ring-1 ring-brand-red/20 group-hover:ring-brand-red transition-colors duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-brand-black mb-4">
+                <h3 className="font-heading text-xl font-bold text-brand-black mb-4">
                   {item.t}
                 </h3>
                 <p className="text-gray-600 text-base leading-relaxed flex-grow">
                   {item.d}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="bg-brand-red py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Ready to book the system?
+      <section className="relative bg-brand-red py-20 lg:py-24 overflow-hidden" aria-label="Book your rental">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-red to-brand-red/95 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 tracking-tight">
+            Ready to make every word heard?
           </h2>
-          <p className="text-white/90 text-lg max-w-xl mx-auto mb-10">
-            Fill in the form and we&apos;ll get back to you with availability
-            and confirmation.
+          <p className="text-white/95 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            Reserve your radio guide equipment in minutes. We&apos;ll confirm availability and deliver to your venue — no hassle.
           </p>
           <Link
             href="/booking"
-            className="inline-flex items-center justify-center bg-white text-brand-red font-semibold py-3.5 px-8 rounded-lg hover:bg-brand-black hover:text-white transition-all duration-200 shadow-lg"
+            className="font-heading inline-flex items-center justify-center bg-white text-brand-red font-semibold py-4 px-10 rounded-xl hover:bg-brand-black hover:text-white transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] ring-2 ring-white/20 hover:ring-white/40"
           >
-            Get Started Now
+            Reserve your equipment now
           </Link>
         </div>
       </section>
