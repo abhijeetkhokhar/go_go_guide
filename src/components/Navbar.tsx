@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <header className="font-heading fixed top-0 z-50 w-full bg-white border-b border-gray-200/80 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-28 items-center justify-between">
+        <div className="flex h-25 items-center justify-between">
           {/* Logo - Image-based */}
           <Link
             href="/"
