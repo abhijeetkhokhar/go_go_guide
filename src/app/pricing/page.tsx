@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Pricing | Radio Guide Rental & Purchase | Go Go Guide",
-    description: "Transparent pricing for radio guide rental and purchase. Monthly rental, outright purchase, enterprise.",
+    description:
+      "Transparent pricing for radio guide rental and purchase. Monthly rental, outright purchase, enterprise.",
   },
 };
 
@@ -24,16 +25,19 @@ export default function PricingPage() {
     <main className="min-h-screen bg-gradient-to-b from-white via-gray-50/80 to-gray-50 pt-32 pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="text-center mb-16 lg:mb-20" aria-label="Pricing overview">
+        <header
+          className="text-center mb-16 lg:mb-20"
+          aria-label="Pricing overview"
+        >
           <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-4 font-heading">
             Transparent pricing
           </p>
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black mb-5 tracking-tight leading-[1.1]">
-            Rent or own —{" "}
-            <span className="text-brand-red">you choose</span>
+            Rent or own — <span className="text-brand-red">you choose</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            No hidden fees. Whether you need short-term rental for one event or equipment for the long term, we have a plan that fits.
+            No hidden fees. Whether you need short-term rental for one event or
+            equipment for the long term, we have a plan that fits.
           </p>
         </header>
 
@@ -65,7 +69,9 @@ export default function PricingPage() {
 
               <div className="p-8 flex flex-col flex-grow">
                 {/* Plan Header */}
-                <div className={`text-center mb-8 ${plan.popular ? "pt-2" : "pt-4"}`}>
+                <div
+                  className={`text-center mb-8 ${plan.popular ? "pt-2" : "pt-4"}`}
+                >
                   <h2 className="font-heading text-2xl sm:text-3xl font-bold text-brand-black mb-3">
                     {plan.name}
                   </h2>
@@ -79,7 +85,9 @@ export default function PricingPage() {
                       {plan.price}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500 font-medium">{plan.billingCycle}</p>
+                  <p className="text-sm text-gray-500 font-medium">
+                    {plan.billingCycle}
+                  </p>
                 </div>
 
                 {/* Features */}
@@ -88,9 +96,14 @@ export default function PricingPage() {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red/10 ring-1 ring-brand-red/20">
-                          <Check className="h-3.5 w-3.5 text-brand-red" strokeWidth={2.5} />
+                          <Check
+                            className="h-3.5 w-3.5 text-brand-red"
+                            strokeWidth={2.5}
+                          />
                         </span>
-                        <span className="text-gray-700 font-medium">{feature}</span>
+                        <span className="text-gray-700 font-medium">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -113,12 +126,18 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="max-w-3xl mx-auto" aria-labelledby="pricing-faq-heading">
+        <section
+          className="max-w-3xl mx-auto"
+          aria-labelledby="pricing-faq-heading"
+        >
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
               Common questions
             </p>
-            <h2 id="pricing-faq-heading" className="font-heading text-3xl sm:text-4xl font-bold text-brand-black tracking-tight">
+            <h2
+              id="pricing-faq-heading"
+              className="font-heading text-4xl md:text-5xl font-bold text-brand-black tracking-tight"
+            >
               Frequently asked questions
             </h2>
           </div>
@@ -149,19 +168,23 @@ export default function PricingPage() {
                 <h3 className="font-heading font-bold text-brand-black mb-3 text-lg">
                   {faq.q}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {faq.a}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{faq.a}</p>
               </article>
             ))}
           </div>
         </section>
 
         {/* CTA strip */}
-        <section className="mt-16 lg:mt-20 text-center" aria-label="Get a quote">
+        <section
+          className="mt-16 lg:mt-20 text-center"
+          aria-label="Get a quote"
+        >
           <p className="text-gray-600 mb-4">
             Need a custom quote or have questions?{" "}
-            <Link href="/contact" className="text-brand-red font-semibold hover:underline">
+            <Link
+              href="/contact"
+              className="text-brand-red font-semibold hover:underline"
+            >
               Contact us
             </Link>{" "}
             — we reply within 24 hours.

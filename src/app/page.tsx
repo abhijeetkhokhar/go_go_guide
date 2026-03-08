@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Radio Guide Rentals | Wireless Tour Audio for Museums & Events",
   description:
-    "Rent professional radio guide systems for city tours, museums, and events. Crystal-clear wireless tour audio since 1996. Book online — we deliver. Trusted worldwide.",
+    "Rent professional radio guide systems for city tours, museums, and events. Crystal-clear wireless tour audio. Trusted by professionals worldwide. Book online — we deliver.",
   keywords: [
     "radio guide rental",
     "tour guide system",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Radio Guide Rentals | Wireless Tour Audio | Go Go Guide",
     description:
-      "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio since 1996.",
+      "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio. Trusted by professionals worldwide.",
   },
 };
 
@@ -36,15 +36,17 @@ export default function HomePage() {
               <div className="flex flex-col items-center lg:items-start mb-2">
                 <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
                 <p className="text-sm font-semibold text-brand-red uppercase tracking-widest font-heading">
-                  Wireless Tour Audio Since 1996
+                  Wireless Tour Audio Excellence
                 </p>
               </div>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-black tracking-tight leading-[1.1]">
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight leading-[1.1]">
                 Everyone hears you.
                 <span className="text-brand-red"> Every time.</span>
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Rent professional radio guide systems for museums, city tours, and events. Book online in minutes — we deliver to your venue. No hidden fees.
+                Rent professional radio guide systems for museums, city tours,
+                and events. Book online in minutes — we deliver to your venue.
+                No hidden fees.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -73,7 +75,7 @@ export default function HomePage() {
                   {/* Image area - full product visible, no harsh crop */}
                   <div className="relative aspect-[4/3] sm:aspect-[5/4] bg-gradient-to-b from-gray-50 to-white">
                     <Image
-                      src="/RadioImg.jpeg"
+                      src="/transmitter_ reciever.png"
                       alt="Professional wireless radio guide equipment for tours and events - Go Go Guide"
                       fill
                       className="object-contain p-6 sm:p-8 drop-shadow-md"
@@ -91,18 +93,25 @@ export default function HomePage() {
       </section>
 
       {/* ================= HOW IT WORKS ================= */}
-      <section className="py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="how-it-works-heading">
+      <section
+        className="py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white"
+        aria-labelledby="how-it-works-heading"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 lg:mb-20">
             <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
             <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
               How it works
             </p>
-            <h2 id="how-it-works-heading" className="font-heading text-4xl md:text-5xl font-bold text-brand-black tracking-tight">
+            <h2
+              id="how-it-works-heading"
+              className="font-heading text-4xl md:text-5xl font-bold text-brand-black tracking-tight"
+            >
               Book in 3 steps — we handle the rest
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              No hidden fees. No complicated contracts. Reserve online, we deliver to your venue.
+              No hidden fees. No complicated contracts. Reserve online, we
+              deliver to your venue.
             </p>
           </div>
 
@@ -161,24 +170,34 @@ export default function HomePage() {
       </section>
 
       {/* ================= WHY CHOOSE ================= */}
-      <section className="py-20 lg:py-24 bg-white" aria-labelledby="why-choose-heading">
+      <section
+        className="py-20 lg:py-24 bg-white"
+        aria-labelledby="why-choose-heading"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 lg:mb-20">
             <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
             <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
               Why choose us
             </p>
-            <h2 id="why-choose-heading" className="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight">
+            <h2
+              id="why-choose-heading"
+              className="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight"
+            >
               Why Choose <span className="text-brand-red">Go</span>{" "}
               <span className="text-black">Go</span>{" "}
               <span className="text-brand-red">Guide</span>?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Professional radio guide rentals trusted by museums, tour operators, and event organizers worldwide.
+              Professional radio guide rentals trusted by museums, tour
+              operators, and event organizers worldwide.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" role="list">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+            role="list"
+          >
             {[
               {
                 t: "Premium equipment",
@@ -278,15 +297,19 @@ export default function HomePage() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="relative bg-brand-red py-20 lg:py-24 overflow-hidden" aria-label="Book your rental">
+      <section
+        className="relative bg-brand-red py-20 lg:py-24 overflow-hidden"
+        aria-label="Book your rental"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-brand-red to-brand-red/95 pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 tracking-tight">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
             Ready to make every word heard?
           </h2>
           <p className="text-white/95 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Reserve your radio guide equipment in minutes. We&apos;ll confirm availability and deliver to your venue — no hassle.
+            Reserve your radio guide equipment in minutes. We&apos;ll confirm
+            availability and deliver to your venue — no hassle.
           </p>
           <Link
             href="/booking"

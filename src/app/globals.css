@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-red: #E31E24;
+  --color-brand-red: #e31e24;
   --color-brand-black: #000000;
 }
 
@@ -41,7 +41,7 @@ textarea {
 
 /* Date input - improve calendar picker appearance */
 input[type="date"] {
-  accent-color: #E31E24;
+  accent-color: #e31e24;
   color-scheme: light;
 }
 

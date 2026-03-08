@@ -126,12 +126,13 @@ export default function ContactPage() {
                 Get in touch
               </p>
             </div>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight leading-[1.08] mb-5">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black tracking-tight leading-[1.1] mb-5">
               Let&apos;s start a{" "}
               <span className="text-brand-red">conversation</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
-              Planning a tour, managing a large group, or need a custom quote? We&apos;re here to help.
+              Planning a tour, managing a large group, or need a custom quote?
+              We&apos;re here to help.
             </p>
             <div className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200/80 px-4 py-2 text-sm font-medium text-gray-700">
               <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
@@ -152,32 +153,32 @@ export default function ContactPage() {
                 <h2 className="font-heading text-sm font-semibold text-brand-red uppercase tracking-widest mb-4">
                   Contact details
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="space-y-4">
                   {contactItems.map((item) => (
                     <article
                       key={item.label}
-                      className="group bg-white rounded-2xl border-2 border-gray-200/80 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-red/25 transition-all duration-300 flex flex-col sm:block text-center sm:text-left"
+                      className="group bg-white rounded-2xl border-2 border-gray-200/80 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-red/25 transition-all duration-300 flex items-center gap-4"
                     >
-                      <div className="flex justify-center sm:justify-start mb-3">
-                        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red ring-1 ring-brand-red/20 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
-                          {item.icon}
-                        </span>
-                      </div>
-                      <p className="text-xs font-semibold text-brand-red uppercase tracking-wider mb-1.5 font-heading">
-                        {item.label}
-                      </p>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="text-brand-black font-semibold text-sm sm:text-base hover:text-brand-red transition-colors break-all"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-gray-700 font-medium text-sm sm:text-base leading-snug">
-                          {item.value}
+                      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red ring-1 ring-brand-red/20 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300 shrink-0">
+                        {item.icon}
+                      </span>
+                      <div className="flex-grow">
+                        <p className="text-xs font-semibold text-brand-red uppercase tracking-wider mb-1.5 font-heading">
+                          {item.label}
                         </p>
-                      )}
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="text-brand-black font-semibold text-sm sm:text-base hover:text-brand-red transition-colors break-all"
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="text-gray-700 font-medium text-sm sm:text-base leading-snug">
+                            {item.value}
+                          </p>
+                        )}
+                      </div>
                     </article>
                   ))}
                 </div>
@@ -185,7 +186,8 @@ export default function ContactPage() {
               <div className="rounded-2xl border-2 border-green-200/80 bg-green-50/50 px-5 py-4 flex items-center gap-3">
                 <span className="inline-flex h-3 w-3 rounded-full bg-green-500 animate-pulse shrink-0" />
                 <p className="text-gray-700 font-medium text-sm">
-                  We usually reply within <strong className="text-brand-black">24 hours</strong>.
+                  We usually reply within{" "}
+                  <strong className="text-brand-black">24 hours</strong>.
                 </p>
               </div>
             </div>
@@ -201,7 +203,8 @@ export default function ContactPage() {
                       Send us a message
                     </h2>
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                      Tell us about your event or rental needs — we&apos;ll get back to you quickly.
+                      Tell us about your event or rental needs — we&apos;ll get
+                      back to you quickly.
                     </p>
                   </div>
 
@@ -213,68 +216,81 @@ export default function ContactPage() {
                     className="space-y-6"
                     aria-label="Contact form"
                   >
-                  <div>
-                    <label htmlFor="contact-name" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
-                      Full name <span className="text-brand-red">*</span>
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      placeholder="John Doe"
-                      required
-                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                    />
-                  </div>
+                    <div>
+                      <label
+                        htmlFor="contact-name"
+                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
+                      >
+                        Full name <span className="text-brand-red">*</span>
+                      </label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        name="name"
+                        placeholder="John Doe"
+                        required
+                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="contact-email" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
-                      Email address <span className="text-brand-red">*</span>
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      placeholder="john@example.com"
-                      required
-                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                    />
-                  </div>
+                    <div>
+                      <label
+                        htmlFor="contact-email"
+                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
+                      >
+                        Email address <span className="text-brand-red">*</span>
+                      </label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        name="email"
+                        placeholder="john@example.com"
+                        required
+                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="contact-phone" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
-                      Phone number <span className="text-brand-red">*</span>
-                    </label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="+1 (555) 000-0000"
-                      className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                    />
-                  </div>
+                    <div>
+                      <label
+                        htmlFor="contact-phone"
+                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
+                      >
+                        Phone number <span className="text-brand-red">*</span>
+                      </label>
+                      <input
+                        id="contact-phone"
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="+1 (555) 000-0000"
+                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      />
+                    </div>
 
-                  <div>
-                    <label htmlFor="contact-message" className="block text-sm font-semibold text-brand-black mb-2 font-heading">
-                      Message <span className="text-brand-red">*</span>
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      rows={5}
-                      placeholder="Tell us about your tour, event, or rental needs…"
-                      required
-                      className="w-full min-h-[120px] resize-y bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                    />
-                  </div>
+                    <div>
+                      <label
+                        htmlFor="contact-message"
+                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
+                      >
+                        Message <span className="text-brand-red">*</span>
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        rows={5}
+                        placeholder="Tell us about your tour, event, or rental needs…"
+                        required
+                        className="w-full min-h-[120px] resize-y bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
+                      />
+                    </div>
 
-                  <SubmitButton />
+                    <SubmitButton />
 
-                  <p className="text-center text-xs text-gray-500">
-                    By submitting, you agree to be contacted about your inquiry.
-                  </p>
-                </form>
+                    <p className="text-center text-xs text-gray-500">
+                      By submitting, you agree to be contacted about your
+                      inquiry.
+                    </p>
+                  </form>
                 </div>
               </div>
             </div>

@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Radio Guide Systems & Tour Audio | Go Go Guide",
-    description: "Professional wireless tour guide equipment for museums, city tours, and events. Rent crystal-clear radio guide systems.",
+    description:
+      "Professional wireless tour guide equipment for museums, city tours, and events. Rent crystal-clear radio guide systems.",
   },
 };
 
@@ -39,7 +40,9 @@ export default function ProductsPage() {
             <span className="text-brand-red">everyone hears</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Wireless tour guide equipment for museums, city tours, and events. Crystal-clear audio, simple setup, trusted by organizers worldwide since 1996.
+            Wireless tour guide equipment for museums, city tours, and events.
+            Crystal-clear audio, simple setup, trusted by organizers worldwide
+            since 1996.
           </p>
         </header>
 
@@ -79,9 +82,14 @@ export default function ProductsPage() {
                   {product.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-red/10 ring-1 ring-brand-red/20">
-                        <Check className="h-3.5 w-3.5 text-brand-red" strokeWidth={2.5} />
+                        <Check
+                          className="h-3.5 w-3.5 text-brand-red"
+                          strokeWidth={2.5}
+                        />
                       </span>
-                      <span className="text-gray-700 font-medium">{feature}</span>
+                      <span className="text-gray-700 font-medium">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -100,13 +108,25 @@ export default function ProductsPage() {
         </section>
 
         {/* Trust / SEO block */}
-        <section className="mt-20 lg:mt-24 max-w-3xl mx-auto" aria-label="Why choose us">
+        <section
+          className="mt-20 lg:mt-24 max-w-3xl mx-auto"
+          aria-label="Why choose us"
+        >
           <div className="rounded-2xl border-2 border-gray-200/80 bg-white p-8 sm:p-10 shadow-sm">
             <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
-            <h2 className="sr-only">Why choose Go Go Guide radio guide equipment</h2>
+            <h2 className="sr-only">
+              Why choose Go Go Guide radio guide equipment
+            </h2>
             <p className="text-gray-600 leading-relaxed text-center sm:text-left">
-              Our <strong className="text-brand-black">radio guide systems</strong> are built for guided tours, museum visits, and large events. Rent by the day or week — we deliver, you focus on your guests. Need help choosing?{" "}
-              <Link href="/contact" className="text-brand-red font-semibold hover:underline">
+              Our{" "}
+              <strong className="text-brand-black">radio guide systems</strong>{" "}
+              are built for guided tours, museum visits, and large events. Rent
+              by the day or week — we deliver, you focus on your guests. Need
+              help choosing?{" "}
+              <Link
+                href="/contact"
+                className="text-brand-red font-semibold hover:underline"
+              >
                 Contact us
               </Link>{" "}
               for a custom quote.

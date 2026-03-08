@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 
 export async function sendEmail(formData: FormData) {
   const name = formData.get("name") as string;
-  const company = formData.get("companyName") as string; // Optional B2B field
+  const company = formData.get("companyName") as string; // Required field
   const email = formData.get("email") as string;
   const phone = (formData.get("phone") as string) || "Not provided";
   const message = formData.get("message");
@@ -14,7 +14,8 @@ export async function sendEmail(formData: FormData) {
   const receivers = formData.get("receivers");
   const startDate = formData.get("startDate");
   const returnDate = formData.get("returnDate");
-  const location = formData.get("location");
+  const pickupLocation = formData.get("pickupLocation");
+  const dropoffLocation = formData.get("dropoffLocation");
 
   const emailUser = process.env.EMAIL_USER;
   const emailPass = process.env.EMAIL_PASS;
@@ -43,14 +44,15 @@ export async function sendEmail(formData: FormData) {
       
       <table style="width: 100%; border-collapse: collapse;">
         <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${name}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px;">${company || "Individual"}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold;">Company:</td><td style="padding: 8px;">${company}</td></tr>
         <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td></tr>
         <tr><td style="padding: 8px; font-weight: bold;">Phone:</td><td style="padding: 8px;">${phone}</td></tr>
         ${
           isBooking
             ? `
-          <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold;">Location:</td><td style="padding: 8px;">${location}</td></tr>
-          <tr><td style="padding: 8px; font-weight: bold;">Dates:</td><td style="padding: 8px;">${startDate} to ${returnDate}</td></tr>
+          <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold;">Pickup Location:</td><td style="padding: 8px;">${pickupLocation}</td></tr>
+          <tr><td style="padding: 8px; font-weight: bold;">Drop-off Location:</td><td style="padding: 8px;">${dropoffLocation}</td></tr>
+          <tr style="background: #f9f9f9;"><td style="padding: 8px; font-weight: bold;">Dates:</td><td style="padding: 8px;">${startDate} to ${returnDate}</td></tr>
         `
             : ""
         }

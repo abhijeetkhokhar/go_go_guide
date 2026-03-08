@@ -20,22 +20,25 @@ class RateLimiter {
   // Generate identifier from email or IP
   private getIdentifier(email: string, ip?: string): string {
     // Prefer email for rate limiting, fallback to IP if available
-    return email.toLowerCase() || (ip || 'unknown');
+    return email.toLowerCase() || ip || "unknown";
   }
 
   // Check if submission is allowed
-  isAllowed(email: string, ip?: string): { allowed: boolean; resetTime?: number; remaining?: number } {
+  isAllowed(
+    email: string,
+    ip?: string,
+  ): { allowed: boolean; resetTime?: number; remaining?: number } {
     const identifier = this.getIdentifier(email, ip);
     const now = Date.now();
-    
+
     const entry = this.submissions.get(identifier);
-    
+
     // No previous submissions
     if (!entry) {
       this.submissions.set(identifier, {
         count: 1,
         lastSubmission: now,
-        resetTime: now + this.windowMs
+        resetTime: now + this.windowMs,
       });
       return { allowed: true, remaining: this.maxSubmissions - 1 };
     }
@@ -45,7 +48,7 @@ class RateLimiter {
       this.submissions.set(identifier, {
         count: 1,
         lastSubmission: now,
-        resetTime: now + this.windowMs
+        resetTime: now + this.windowMs,
       });
       return { allowed: true, remaining: this.maxSubmissions - 1 };
     }
@@ -58,10 +61,10 @@ class RateLimiter {
     }
 
     // Rate limit exceeded
-    return { 
-      allowed: false, 
+    return {
+      allowed: false,
       resetTime: entry.resetTime,
-      remaining: 0
+      remaining: 0,
     };
   }
 
@@ -69,11 +72,11 @@ class RateLimiter {
   getRemaining(email: string, ip?: string): number {
     const identifier = this.getIdentifier(email, ip);
     const entry = this.submissions.get(identifier);
-    
+
     if (!entry || Date.now() > entry.resetTime) {
       return this.maxSubmissions;
     }
-    
+
     return Math.max(0, this.maxSubmissions - entry.count);
   }
 
@@ -81,11 +84,11 @@ class RateLimiter {
   getResetTime(email: string, ip?: string): number {
     const identifier = this.getIdentifier(email, ip);
     const entry = this.submissions.get(identifier);
-    
+
     if (!entry) {
       return 0;
     }
-    
+
     const now = Date.now();
     return Math.max(0, Math.ceil((entry.resetTime - now) / 1000));
   }
@@ -103,12 +106,15 @@ class RateLimiter {
 
 // Create singleton instances with different limits
 export const contactRateLimiter = new RateLimiter(3, 15); // 3 submissions per 15 minutes
-export const bookingRateLimiter = new RateLimiter(5, 60);  // 5 submissions per hour
+export const bookingRateLimiter = new RateLimiter(5, 60); // 5 submissions per hour
 
 // Cleanup expired entries every 5 minutes
-if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
-    contactRateLimiter.cleanup();
-    bookingRateLimiter.cleanup();
-  }, 5 * 60 * 1000);
+if (typeof setInterval !== "undefined") {
+  setInterval(
+    () => {
+      contactRateLimiter.cleanup();
+      bookingRateLimiter.cleanup();
+    },
+    5 * 60 * 1000,
+  );
 }

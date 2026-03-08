@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Go Go Guide",
   },
   description:
-    "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio since 1996.",
+    "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio. Trusted by professionals worldwide.",
   keywords: [
     "radio guide rental",
     "tour audio equipment",

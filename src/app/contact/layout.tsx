@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Contact | Go Go Guide – Radio Guide Rentals & Support",
-    description: "Get in touch for radio guide rentals and custom solutions. We reply within 24 hours.",
+    description:
+      "Get in touch for radio guide rentals and custom solutions. We reply within 24 hours.",
   },
 };
 

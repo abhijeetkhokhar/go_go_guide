@@ -37,13 +37,20 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="mt-20 lg:mt-24" aria-labelledby="booking-faq-heading">
+    <section
+      id="faq"
+      className="mt-20 lg:mt-24"
+      aria-labelledby="booking-faq-heading"
+    >
       <div className="text-center mb-12">
         <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
         <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">
           FAQ
         </p>
-        <h2 id="booking-faq-heading" className="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-4 tracking-tight">
+        <h2
+          id="booking-faq-heading"
+          className="font-heading text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight"
+        >
           Your questions answered
         </h2>
         <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
@@ -60,9 +67,10 @@ export default function FAQ() {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className={`
                 cursor-pointer rounded-2xl border-2 transition-all duration-200 overflow-hidden
-                ${isOpen
-                  ? "bg-white border-brand-red/40 shadow-md shadow-brand-red/5"
-                  : "bg-white border-gray-200/80 hover:border-brand-red/25 hover:shadow-md"
+                ${
+                  isOpen
+                    ? "bg-white border-brand-red/40 shadow-md shadow-brand-red/5"
+                    : "bg-white border-gray-200/80 hover:border-brand-red/25 hover:shadow-md"
                 }
               `}
             >
@@ -85,8 +93,18 @@ export default function FAQ() {
                     isOpen ? "rotate-180" : ""
                   }`}
                 >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </span>
               </div>

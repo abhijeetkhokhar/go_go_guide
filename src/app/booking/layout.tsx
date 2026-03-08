@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Book Now | Reserve Radio Guide Equipment | Go Go Guide",
-    description: "Reserve radio guide equipment online. We confirm availability and delivery within 24 hours.",
+    description:
+      "Reserve radio guide equipment online. We confirm availability and delivery within 24 hours.",
   },
 };
 

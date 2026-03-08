@@ -32,7 +32,7 @@ export default function Navbar() {
               alt="Go Go Guide"
               width={340}
               height={120}
-              className="h-24 sm:h-28 w-auto object-contain"
+              className="h-24 sm:h-30 w-auto object-contain"
             />
           </Link>
 

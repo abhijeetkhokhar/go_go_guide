@@ -22,10 +22,12 @@ export interface PricingPlan {
 export interface BookingForm {
   name: string;
   email: string;
+  companyName: string;
   startDate: string;
   returnDate: string;
   transmitters: number;
   microphones: number;
   receivers: number;
-  location: string;
+  pickupLocation: string;
+  dropoffLocation: string;
 }
