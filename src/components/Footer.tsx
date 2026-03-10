@@ -18,13 +18,14 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6 font-heading group">
               <span className="inline-block h-0.5 w-10 bg-brand-red rounded-full mb-4" />
-              <span className="text-2xl font-bold tracking-tight block">
+              <span className="font-bold tracking-tight block text-[19px] md:text-[17px]">
                 <span className="text-brand-red">Go</span>{" "}
                 <span className="text-white">Go</span>{" "}
                 <span className="text-brand-red">Guide</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xs">
+            {/* Mobile: 18px | Desktop: 16px */}
+            <p className="text-gray-400 leading-relaxed max-w-xs text-[18px] md:text-[16px]">
               Crystal-clear radio guide rentals. Trusted by professionals
               worldwide. We deliver — you focus on your event.
             </p>
@@ -32,10 +33,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <nav aria-label="Footer navigation">
-            <h3 className="font-heading text-xs font-semibold text-white uppercase tracking-widest mb-6">
+            <h3 className="font-heading font-semibold text-white uppercase tracking-widest mb-6 text-[18px] md:text-[16px]">
               Quick Links
             </h3>
-            <ul className="space-y-3.5" role="list">
+            <ul
+              className="space-y-3.5 text-gray-400 text-[18px] md:text-[16px]"
+              role="list"
+            >
               {[
                 { label: "Home", href: "/" },
                 { label: "Products", href: "/products" },
@@ -47,7 +51,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 text-sm font-medium hover:text-brand-red transition-colors duration-200"
+                    className="text-gray-400 font-medium hover:text-brand-red transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -58,64 +62,50 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="font-heading text-xs font-semibold text-white uppercase tracking-widest mb-6">
+            <h3 className="font-heading font-semibold text-white uppercase tracking-widest mb-6 text-[18px] md:text-[16px]">
               Support
             </h3>
             <ul className="space-y-3.5" role="list">
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-400 text-sm font-medium hover:text-brand-red transition-colors duration-200"
-                >
-                  Contact us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/booking#faq"
-                  className="text-gray-400 text-sm font-medium hover:text-brand-red transition-colors duration-200"
-                >
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-gray-400 text-sm font-medium hover:text-brand-red transition-colors duration-200"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-gray-400 text-sm font-medium hover:text-brand-red transition-colors duration-200"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
+              {[
+                { label: "Contact us", href: "/contact" },
+                { label: "FAQs", href: "/booking#faq" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Privacy Policy", href: "#" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 font-medium hover:text-brand-red transition-colors duration-200 text-[18px] md:text-[16px]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading text-xs font-semibold text-white uppercase tracking-widest mb-6">
+            <h3 className="font-heading font-semibold text-white uppercase tracking-widest mb-6 text-[18px] md:text-[16px]">
               Get in touch
             </h3>
-            <ul className="space-y-4 text-sm text-gray-400" role="list">
+            <ul
+              className="space-y-4 text-gray-400 text-[18px] md:text-[16px]"
+              role="list"
+            >
               <li>
-                <span className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                <span className="block text-gray-500 font-semibold uppercase tracking-wider mb-1.5 text-[17px] md:text-[15px]">
                   Email
                 </span>
                 <a
-                  href="mailto:info@goguide.com"
+                  href="mailto:gogoguideinfo@gmail.com"
                   className="text-white/90 hover:text-brand-red transition-colors duration-200 font-medium"
                 >
-                  info@goguide.com
+                  gogoguideinfo@gmail.com
                 </a>
               </li>
               <li>
-                <span className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                <span className="block text-gray-500 font-semibold uppercase tracking-wider mb-1.5 text-[17px] md:text-[15px]">
                   Phone
                 </span>
                 <a
@@ -126,7 +116,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="block text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                <span className="block text-gray-500 font-semibold uppercase tracking-wider mb-1.5 text-[17px] md:text-[15px]">
                   Address
                 </span>
                 <span className="text-white/80">
@@ -134,7 +124,7 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-            <p className="mt-4 text-xs text-gray-500">
+            <p className="mt-4 text-gray-500 text-[18px] md:text-[16px]">
               We reply within 24 hours.
             </p>
           </div>
@@ -142,7 +132,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 lg:mt-20 pt-8 border-t border-white/10">
-          <p className="text-gray-500 text-xs sm:text-sm tracking-wider text-center">
+          <p className="text-gray-500 tracking-wider text-center text-[18px] md:text-[16px]">
             © {currentYear} <span className="text-brand-red">Go</span>{" "}
             <span className="text-white">Go</span>{" "}
             <span className="text-brand-red">Guide</span>. All rights reserved.

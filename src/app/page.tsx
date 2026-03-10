@@ -1,23 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { no } from "zod/locales";
+import { after, before } from "node:test";
 
 export const metadata: Metadata = {
-  title: "Radio Guide Rentals | Wireless Tour Audio for Museums & Events",
+  title:
+    "Wireless Tour Guide System Rental | Radio Guide Equipment | Go Go Guide",
   description:
-    "Rent professional radio guide systems for city tours, museums, and events. Crystal-clear wireless tour audio. Trusted by professionals worldwide. Book online — we deliver.",
+    "Rent professional wireless tour guide systems and radio guide equipment for museums, city tours, conferences, factory visits, and events. Crystal-clear audio for guided tours. Book online with Go Go Guide.",
   keywords: [
+    "wireless tour guide system",
     "radio guide rental",
-    "tour guide system",
-    "museum audio equipment",
-    "wireless tour guide",
-    "event audio rental",
-    "group tour headsets",
+    "tour guide headset system",
+    "museum audio guide system",
+    "guided tour audio equipment",
+    "tour guide transmitter receiver",
+    "group tour communication system",
+    "event tour guide audio system",
   ],
   openGraph: {
-    title: "Radio Guide Rentals | Wireless Tour Audio | Go Go Guide",
+    title: "Wireless Tour Guide System Rental | Go Go Guide",
     description:
-      "Crystal-clear radio guide rentals for tours, museums, and events. Book online, we deliver — professional audio. Trusted by professionals worldwide.",
+      "Professional radio guide systems for museums, tours, conferences, and events. Crystal-clear wireless audio equipment with worldwide delivery.",
   },
 };
 
@@ -44,9 +49,11 @@ export default function HomePage() {
                 <span className="text-brand-red"> Every time.</span>
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Rent professional radio guide systems for museums, city tours,
-                and events. Book online in minutes — we deliver to your venue.
-                No hidden fees.
+                Rent professional wireless tour guide systems designed for
+                museums, city tours, conferences, factory visits, and guided
+                group experiences. Our radio guide equipment delivers
+                crystal-clear audio so every participant hears the guide clearly
+                — even in crowded or noisy environments.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -76,9 +83,9 @@ export default function HomePage() {
                   <div className="relative aspect-[4/3] sm:aspect-[5/4] bg-gradient-to-b from-gray-50 to-white">
                     <Image
                       src="/transmitter_ reciever.png"
-                      alt="Professional wireless radio guide equipment for tours and events - Go Go Guide"
-                      fill
-                      className="object-contain p-6 sm:p-8 drop-shadow-md"
+                      alt="Wireless tour guide system transmitter and receivers used for museum tours, city tours, and guided group events"
+                      width={600}
+                      height={450}
                       priority
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
@@ -110,8 +117,9 @@ export default function HomePage() {
               Book in 3 steps — we handle the rest
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              No hidden fees. No complicated contracts. Reserve online, we
-              deliver to your venue.
+              Simple and reliable tour guide system rental. Choose your
+              equipment, confirm your booking, and we deliver professional radio
+              guide systems directly to your event location.
             </p>
           </div>
 
@@ -120,17 +128,17 @@ export default function HomePage() {
               {
                 n: "01",
                 t: "Choose your equipment",
-                d: "Pick the radio guide system that fits your group size and venue. See products and pricing in minutes.",
+                d: "Select the wireless tour guide system that fits your group size and event type. Our professional transmitters and receivers deliver clear audio for guided tours of any scale.",
               },
               {
                 n: "02",
                 t: "Confirm dates & details",
-                d: "Tell us when and where. We send confirmation and answer any questions before your event.",
+                d: "Provide your event details including date, location, and group size. Our team confirms availability and prepares your radio guide equipment.",
               },
               {
                 n: "03",
                 t: "We deliver — you shine",
-                d: "Equipment arrives at your location. After the event, we collect. You focus on your guests.",
+                d: "Your wireless tour guide systems arrive ready to use. After your event, we arrange pickup so you can focus on delivering an excellent experience.",
               },
             ].map((step, idx) => (
               <div key={idx} className="flex flex-1 items-center gap-4">
@@ -189,8 +197,9 @@ export default function HomePage() {
               <span className="text-brand-red">Guide</span>?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Professional radio guide rentals trusted by museums, tour
-              operators, and event organizers worldwide.
+              Professional wireless tour guide systems trusted by museums, tour
+              operators, conference organizers, and educational institutions
+              worldwide.
             </p>
           </div>
 
@@ -201,7 +210,7 @@ export default function HomePage() {
             {[
               {
                 t: "Premium equipment",
-                d: "Crystal-clear wireless tour guide systems built for museums, city tours, and large events. No dropouts, no fuss.",
+                d: "High-quality wireless tour guide systems designed for museums, city tours, conferences, and large events with reliable signal transmission and crystal-clear sound.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -220,7 +229,7 @@ export default function HomePage() {
               },
               {
                 t: "Worldwide delivery",
-                d: "We deliver and support events across 50+ countries. Same reliable equipment and support wherever you are.",
+                d: "Our radio guide systems support guided tours and events in more than 50 countries with consistent equipment quality and reliable logistics.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -239,7 +248,7 @@ export default function HomePage() {
               },
               {
                 t: "Simple booking",
-                d: "Reserve online in minutes. We deliver to your venue and collect after. No long-term contracts or hidden fees.",
+                d: "Book your wireless tour guide equipment online in minutes. Flexible rental options with transparent pricing and no hidden fees.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -258,7 +267,7 @@ export default function HomePage() {
               },
               {
                 t: "Support when you need it",
-                d: "24/7 technical support so your event runs smoothly. We're here before, during, and after your rental.",
+                d: "Dedicated technical support ensures your tour guide audio system works perfectly before, during, and after your event.",
                 icon: (
                   <svg
                     className="w-6 h-6"
@@ -308,8 +317,9 @@ export default function HomePage() {
             Ready to make every word heard?
           </h2>
           <p className="text-white/95 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Reserve your radio guide equipment in minutes. We&apos;ll confirm
-            availability and deliver to your venue — no hassle.
+            Reserve your wireless tour guide systems in minutes. We confirm
+            availability quickly and deliver professional radio guide equipment
+            directly to your venue.
           </p>
           <Link
             href="/booking"

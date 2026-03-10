@@ -1,52 +1,31 @@
-"use client";
+import ContactForm from "./ContactForm";
 
-import { useRef, useState } from "react";
-import { useFormStatus } from "react-dom";
-import { sendEmail } from "@/app/actions/sendEmail";
+export const metadata = {
+  title: "Contact Go Go Guide | Wireless Tour Guide System Rental Support",
+  description:
+    "Contact Go Go Guide for wireless tour guide system rentals, radio guide equipment, and group tour audio solutions. Get support, request a quote, or ask about equipment availability.",
+  keywords: [
+    "tour guide system rental contact",
+    "radio guide equipment support",
+    "wireless tour guide system rental",
+    "tour guide headset system",
+    "museum audio guide equipment",
+    "guided tour audio system",
+    "tour guide equipment provider",
+  ],
+  openGraph: {
+    title: "Contact Go Go Guide | Tour Guide Equipment Rental",
+    description:
+      "Get in touch with Go Go Guide for professional wireless tour guide systems and radio guide equipment rentals for tours, museums, and events.",
+  },
+};
 
-/* ---------- Submit Button ---------- */
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <button
-      type="submit"
-      disabled={pending}
-      className={`font-heading w-full rounded-xl py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 flex justify-center items-center ${
-        pending
-          ? "bg-gray-400 cursor-not-allowed"
-          : "bg-brand-red hover:bg-brand-black hover:shadow-xl hover:scale-[1.01] shadow-brand-red/25"
-      }`}
-    >
-      {pending ? "Sending…" : "Send message"}
-    </button>
-  );
-}
-
-/* ---------- Contact Page ---------- */
 export default function ContactPage() {
-  const formRef = useRef<HTMLFormElement | null>(null);
-  const [formKey, setFormKey] = useState(0);
-
-  async function handleAction(formData: FormData) {
-    const result = await sendEmail(formData);
-
-    if (result.success) {
-      alert(
-        "Your message has been sent. We'll get back to you within 24 hours.",
-      );
-      formRef.current?.reset();
-      setFormKey((k) => k + 1);
-    } else {
-      alert("Something went wrong. Please try again or contact us directly.");
-    }
-  }
-
   const contactItems = [
     {
       label: "Email",
-      href: "mailto:info@goguide.com",
-      value: "info@goguide.com",
+      href: "mailto:gogoguideinfo@gmail.com",
+      value: "gogoguideinfo@gmail.com",
       icon: (
         <svg
           className="w-6 h-6 shrink-0"
@@ -86,7 +65,7 @@ export default function ContactPage() {
     {
       label: "Office",
       href: null,
-      value: "Main St 123, Tour District, Global City",
+      value: "Tour Operations Office, Global Events District",
       icon: (
         <svg
           className="w-6 h-6 shrink-0"
@@ -131,8 +110,10 @@ export default function ContactPage() {
               <span className="text-brand-red">conversation</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
-              Planning a tour, managing a large group, or need a custom quote?
-              We&apos;re here to help.
+              Planning a guided tour, organizing a museum visit, or managing a
+              large group event? Contact Go Go Guide for professional wireless
+              tour guide systems and radio guide equipment rentals tailored to
+              your needs.
             </p>
             <div className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200/80 px-4 py-2 text-sm font-medium text-gray-700">
               <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
@@ -147,7 +128,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/90 to-gray-50 pointer-events-none" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-2 lg:-mt-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* LEFT: Contact details + reply */}
+            {/* LEFT: Contact details */}
             <div className="space-y-6">
               <div>
                 <h2 className="font-heading text-sm font-semibold text-brand-red uppercase tracking-widest mb-4">
@@ -192,105 +173,12 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* RIGHT: Contact Form */}
+            {/* RIGHT: Contact Form (Client Side) */}
             <div className="lg:pt-0">
               <div className="bg-white rounded-2xl border-2 border-gray-200/90 shadow-xl overflow-hidden hover:shadow-2xl hover:border-brand-red/25 transition-all duration-300">
                 <div className="h-1.5 w-full bg-gradient-to-r from-brand-red via-brand-red to-brand-red/80" />
                 <div className="p-8 sm:p-10">
-                  <div className="mb-8">
-                    <span className="inline-block h-0.5 w-10 bg-brand-red rounded-full mb-3" />
-                    <h2 className="font-heading text-2xl sm:text-3xl font-bold text-brand-black mb-2">
-                      Send us a message
-                    </h2>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                      Tell us about your event or rental needs — we&apos;ll get
-                      back to you quickly.
-                    </p>
-                  </div>
-
-                  <form
-                    key={formKey}
-                    ref={formRef}
-                    action={handleAction}
-                    noValidate
-                    className="space-y-6"
-                    aria-label="Contact form"
-                  >
-                    <div>
-                      <label
-                        htmlFor="contact-name"
-                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
-                      >
-                        Full name <span className="text-brand-red">*</span>
-                      </label>
-                      <input
-                        id="contact-name"
-                        type="text"
-                        name="name"
-                        placeholder="John Doe"
-                        required
-                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="contact-email"
-                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
-                      >
-                        Email address <span className="text-brand-red">*</span>
-                      </label>
-                      <input
-                        id="contact-email"
-                        type="email"
-                        name="email"
-                        placeholder="john@example.com"
-                        required
-                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="contact-phone"
-                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
-                      >
-                        Phone number <span className="text-brand-red">*</span>
-                      </label>
-                      <input
-                        id="contact-phone"
-                        type="tel"
-                        name="phone"
-                        required
-                        placeholder="+1 (555) 000-0000"
-                        className="w-full bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="contact-message"
-                        className="block text-sm font-semibold text-brand-black mb-2 font-heading"
-                      >
-                        Message <span className="text-brand-red">*</span>
-                      </label>
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        rows={5}
-                        placeholder="Tell us about your tour, event, or rental needs…"
-                        required
-                        className="w-full min-h-[120px] resize-y bg-white border-2 border-gray-200 rounded-xl px-4 py-3.5 text-base text-brand-black placeholder:text-gray-400 hover:border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 focus:outline-none transition-colors duration-200"
-                      />
-                    </div>
-
-                    <SubmitButton />
-
-                    <p className="text-center text-xs text-gray-500">
-                      By submitting, you agree to be contacted about your
-                      inquiry.
-                    </p>
-                  </form>
+                  <ContactForm />
                 </div>
               </div>
             </div>

@@ -42,6 +42,25 @@ export default function FAQ() {
       className="mt-20 lg:mt-24"
       aria-labelledby="booking-faq-heading"
     >
+      {/* ✅ SEO FAQ Schema for Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
+
       <div className="text-center mb-12">
         <span className="inline-block h-0.5 w-12 bg-brand-red rounded-full mb-4" />
         <p className="text-sm font-semibold text-brand-red uppercase tracking-widest mb-3 font-heading">

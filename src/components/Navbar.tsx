@@ -30,9 +30,10 @@ export default function Navbar() {
             <Image
               src="/goguide.png"
               alt="Go Go Guide"
-              width={340}
+              width={340} // Maintain aspect ratio capability
               height={120}
-              className="h-24 sm:h-30 w-auto object-contain"
+              className="h-32 sm:h-35 md:h-35 w-auto object-contain transition-all"
+              // ^ Changed mobile height to h-32 and kept desktop/ipad scaled
             />
           </Link>
 
@@ -45,7 +46,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative text-sm font-medium transition-colors duration-200 ${
+                    className={`relative font-medium transition-colors duration-200 text-[17px] ${
                       active
                         ? "text-brand-red"
                         : "text-gray-600 hover:text-brand-red"
@@ -62,7 +63,7 @@ export default function Navbar() {
 
             <Link
               href="/booking"
-              className="rounded-lg bg-brand-red px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-black transition-all duration-200"
+              className="rounded-lg bg-brand-red px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-black transition-all duration-200 text-[17px]"
             >
               Book Now
             </Link>
@@ -102,7 +103,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                className={`px-4 py-3 rounded-lg font-medium transition-colors text-[17px] sm:text-[18px] ${
                   pathname === link.href
                     ? "bg-gray-100 text-brand-black"
                     : "text-gray-600 hover:bg-gray-50 hover:text-brand-black"
@@ -115,7 +116,7 @@ export default function Navbar() {
             <Link
               href="/booking"
               onClick={() => setIsOpen(false)}
-              className="mt-2 mx-4 rounded-lg bg-brand-red py-3.5 text-center text-white font-semibold hover:bg-brand-black transition-colors"
+              className="mt-2 mx-4 rounded-lg bg-brand-red py-3.5 text-center text-white font-semibold hover:bg-brand-black transition-colors text-[17px] sm:text-[18px]"
             >
               Book Now
             </Link>

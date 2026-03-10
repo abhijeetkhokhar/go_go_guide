@@ -3,19 +3,23 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Go Go Guide | Professional Radio Guide Rentals",
+  title: "About Go Go Guide | Wireless Tour Guide System & Radio Guide Rentals",
   description:
-    "Go Go Guide delivers crystal-clear wireless tour guide equipment for museums, city tours, and events worldwide. Learn our mission, values, and story.",
+    "Go Go Guide provides professional wireless tour guide systems and radio guide rentals for museums, city tours, factory visits, conferences, and events worldwide. Learn about our mission, technology, and values.",
   keywords: [
     "radio guide rental company",
+    "wireless tour guide system",
+    "tour guide headset system",
+    "museum audio guide equipment",
     "tour guide system provider",
-    "museum audio equipment",
-    "Go Go Guide about",
+    "group tour audio system",
+    "wireless tour audio equipment",
+    "Go Go Guide company",
   ],
   openGraph: {
-    title: "About Us | Go Go Guide – Professional Radio Guide Rentals",
+    title: "About Go Go Guide | Professional Wireless Tour Guide Systems",
     description:
-      "Professional radio guide rentals with modern technology. Mission, values, and global reach.",
+      "Professional wireless radio guide systems for tours, museums, conferences, and events. Learn about Go Go Guide's mission, values, and technology.",
   },
 };
 
@@ -24,7 +28,7 @@ export default function AboutPage() {
     {
       title: "Quality first",
       description:
-        "We use and rent only equipment that meets the highest standards for audio clarity and reliability — so every guest hears every word.",
+        "We provide professional wireless tour guide systems designed for crystal-clear audio and reliable signal transmission so every participant hears the guide clearly.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -44,7 +48,7 @@ export default function AboutPage() {
     {
       title: "Customer focus",
       description:
-        "Your event’s success is our priority. We handle logistics and support so you can focus on delivering a great experience.",
+        "Your event’s success is our priority. We manage logistics and equipment so tour guides, museums, and event organizers can focus on delivering exceptional visitor experiences.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -64,7 +68,7 @@ export default function AboutPage() {
     {
       title: "Global reach",
       description:
-        "We deliver and support events in 50+ countries. Same reliable equipment and service wherever you are.",
+        "Our radio guide systems support tours and events across more than 50 countries with consistent equipment quality and reliable service.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -84,7 +88,7 @@ export default function AboutPage() {
     {
       title: "Sustainability",
       description:
-        "Reusable equipment and responsible practices. We help you run great events without unnecessary waste.",
+        "Reusable professional audio equipment and responsible practices help deliver high-quality events while reducing unnecessary waste.",
       icon: (
         <svg
           className="w-6 h-6"
@@ -105,8 +109,8 @@ export default function AboutPage() {
 
   const stats = [
     { value: "2024", label: "Year Founded" },
-    { value: "50+", label: "Countries" },
-    { value: "Modern", label: "Technology" },
+    { value: "50+", label: "Countries Served" },
+    { value: "Modern", label: "Wireless Audio Technology" },
   ];
 
   return (
@@ -138,9 +142,11 @@ export default function AboutPage() {
                   <span className="text-black">Go</span>{" "}
                   <span className="text-brand-red">Guide</span>
                 </span>{" "}
-                delivers cutting-edge radio guide rentals. Our mission: make
-                sure every word is heard clearly — no matter the crowd size or
-                environment.
+                provides professional wireless radio guide systems designed for
+                museums, city tours, conferences, factory visits, and guided
+                group experiences. Our equipment delivers crystal-clear audio so
+                every participant can hear the guide clearly, even in busy or
+                noisy environments.
               </p>
 
               {/* Stats: card strip */}
@@ -171,7 +177,7 @@ export default function AboutPage() {
                   <div className="relative aspect-[4/3] sm:aspect-[5/4] bg-gray-100">
                     <Image
                       src="/transmitter_ reciever.png"
-                      alt="Professional wireless radio guide equipment for tours and events"
+                      alt="Wireless tour guide system transmitter and receivers used for museum tours, city tours, and guided events"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -199,8 +205,9 @@ export default function AboutPage() {
               experience.&rdquo;
             </blockquote>
             <p className="mt-6 text-gray-600 text-base leading-relaxed">
-              Today we support museums, city tour operators, and event
-              organizers who demand simplicity and reliability.
+              Today we support museums, city tour operators, conference
+              organizers, and educational institutions that require reliable
+              wireless tour guide systems for professional guided experiences.
             </p>
           </article>
         </div>
@@ -265,8 +272,9 @@ export default function AboutPage() {
             Ready to make every word heard?
           </h2>
           <p className="text-white/95 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Reserve your radio guide equipment in minutes. We&apos;ll confirm
-            availability and deliver to your venue.
+            Reserve your wireless tour guide equipment in minutes. We confirm
+            availability quickly and deliver professional radio guide systems
+            directly to your venue.
           </p>
           <Link
             href="/booking"
